@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background: black;
+  font-family: 'Nunito Sans', sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header{
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-around;
+}
+.header h2 a{
+  color: white;
+}
+.header h2 a:hover{
+  color: rgb(8, 136, 241);
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav{
+  display: flex;
+  justify-content: center;
+  color: rgba(255,255,255,.5);
+  margin: 0.5em;
+}
+.header_logo a{
+  color:rgb(8, 136, 241);
+  font-size: 2rem;
+  font-weight: bold;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  text-align: center;
+}
+nav a {
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: 0.1s;
+  margin: 1rem 3rem;
+  color:rgb(162, 161, 167) 
+}
+
+nav a:hover{
+  color: rgb(8, 82, 241);
+}
+
+nav a.active{
+  color: rgb(8, 70, 241);
+}
+
+.search{
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 0.5rem;
+
+}
+.search:hover{
+  background-color: rgb(233, 218, 247);
+}
+
+.container{
+  margin-block: 1rem;  
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.home{
+  text-align: center;
+  padding-top: 10rem;
+}
+
+.home h1{
+  margin: 2rem;
+  font-size: 3rem;
+}
+.home p{
+  font-size: 2rem;
+}
+
+.music-card{
+  max-width: 400px;
+  height: 510px;
+  border: 2px solid rgba(255,255,255,.5);
+  padding: 10px;
+  text-align: center;
+}
+
+.music-details{
+  border: 2px solid rgba(255,255,255,.5);
+  padding: 10px;
+  text-align: center;
+  max-width: fit-content;
+  margin-left: 40%;
+}
+.music-details h4{
+  color: rgba(255,255,255,.5);
+}
+.music-details p{
+  font-style: italic;
+}
+.music-details button{
+  padding: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.music-card img {
+  max-width: 100%;
+}
+.music-card input{
+  cursor: pointer;
+}
+.music-card label{
+  color: rgba(255,255,255,.5);
+  padding-right: 5px;
+  font-style: italic;
+}
+
+.music-card a{
+  color: rgba(255,255,255,.5);
+  text-decoration: underline;
+}
+
+.addform form {
+  margin-left: 25%;
+  margin-top: 10px;
+}
+.addform input{
+  width: 50%;
+  display: block;
+  height: 2rem;
+  padding: 2px;
+  justify-content: center;
+  cursor: pointer;
+}
+.addform button{
+  width: fit-content;
+  height: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 20%;
+}
+.addform label{
+  padding: 10px;
+  margin-left: 20%;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 900px){
+  .container{
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+  .music-card{
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .container{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
