@@ -15,6 +15,16 @@ function App() {
   const [show, setShow] = useState(false);
   const [endPoint, setEndPoint] = useState('');
 
+  useEffect(()=>{
+    fetch(`https://my-musiq-app.herokuapp.com/music?q=${endPoint}`)
+    .then(response => response.json())
+    .then(setSongs);
+  }, [endPoint])
+
+  const onChangeHandler = (e) => {
+    console.log("Searching...");
+    setEndPoint(e.target.value.toLowerCase())
+  }
 
   return (
     <div className="App">
